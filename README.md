@@ -13,14 +13,6 @@ These instructions will get you a copy of the project up and running on your loc
   5. Hit 'Run' or type 'python Blackjack.py' in your terminal.
   ```
 
-## Deployment
-
-Additional information on how to use the application once it's up and running.
-```
-  1. Once the application is running, you need to choose if you want to be a dealer or player.
-  2. If you choose player(1), you will 
-```
-
 ## Functions
 
 This section will describe the different functionalities in the application and how to use them.
@@ -48,17 +40,37 @@ As a dealer you will have the following options once you start the game:
 
 ```
   1. Players turn will be played automatically.
-  2. Dealer will automatically hit if below 17.
+  2. Dealer will automatically hit if below 17. 
   3. Game outcome is decided, balances are updated and you may choose to continue playing.
+```
+
+## Rules
+
+For an extensive list of official Blackjack rules, please see: * [Blackjack Rules](https://en.wikipedia.org/wiki/Blackjack)
+
+### Missing rules
+
+```
+  1. Splitting
+  2. Double-down
+  3. Safety (15 %)
+  4. Super 7
+  5. Hard/soft 17
+```
+
+## Unit-testing
+
+In order to run the unit-tests for this application, follow the instructions below:
+
+```
+  1. Open the test_unit.py file and hit run or type the following command in the terminal: 'python test_unit.py'
+  2. If you want to skip the console prints throughout the unit-tests, you can add '-b' to the terminal command.
 ```
 
 ## Built With
 
-* [Spring](https://spring.io/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [Bootstrap](https://getbootstrap.com/) - Application design
+* [Visual Studio Code](https://code.visualstudio.com/) - The IDE used for developing this project
 
 ## Authors
 
-* **Jonas Olsen** - [Jonas800](https://github.com/Jonas800)
 * **Matthias Skou** - [MatthiasSkou](https://github.com/MatthiasSkou)
