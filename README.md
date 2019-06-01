@@ -46,7 +46,7 @@ As a dealer you will have the following options once you start the game:
 
 ## Rules
 
-For an extensive list of official Blackjack rules, please see: * [Blackjack Rules](https://en.wikipedia.org/wiki/Blackjack)
+For an extensive list of official Blackjack rules, please see: [Blackjack Rules](https://en.wikipedia.org/wiki/Blackjack)
 
 ### Missing rules
 
