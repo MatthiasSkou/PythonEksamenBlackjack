@@ -60,7 +60,8 @@ For an extensive list of official Blackjack rules, please see: [Blackjack Rules]
 
 ## Unit-testing
 
-In order to run the unit-tests for this application, follow the instructions below:
+There are currently 21 unit-tests for this project.
+In order to run the unit-tests, follow the instructions below:
 
 ```
   1. Open the test_unit.py file and hit run or type the following command in the terminal: 'python test_unit.py'
