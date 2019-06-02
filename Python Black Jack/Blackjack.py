@@ -1,22 +1,3 @@
- # TODO:
-    # os.system('clear')
-    # Add .sleeps() for AI turns
-    # 404 handling
-    # Create start switch menu (Start game - See rules - Credits - Quit)
-    # Fix aces for dealer
-    # Betting
-        # Splits
-        # Double down
-        # Safety 15 %
-        # Super 7
-    # Comments / Documentation
-    # TODO Set correct multiplier for all bets
-    # Change color depending on suit console
-    # Incluce *args // **kwargs in method?
-    # Set methods to return statements
-    # Move dealer.dealCard to deck? 
-    # Change method names and fields to_something_like_this
-
 from Player import Player
 from Dealer import Dealer
 from Deck import Deck
@@ -37,16 +18,15 @@ while player.playerChoice:                      # Loop while player needs to mak
 while not endGame:
     deck = Deck([])
     for i in range(4):
-        deck.createDeck()   # Create 4 decks 
-                            # Method that fills the deck with 52 cards
-    deck.shuffleDeck()                              # Shuffle the deck randomly
-    player = Player([], player.isAI, True, player.balance, 0)                               # Instantiate our player, dealer and deck
-    dealer = Dealer([], dealer.isAI, False, False, False)
-    if not player.isAI:
+        deck.createDeck()                       # Create 4 decks in loop (208 cards)
+    deck.shuffleDeck()                          # Shuffle the deck randomly
+    player = Player([], player.isAI, True, player.balance, 0)   # Instantiate our player and dealer with their correct fields
+    dealer = Dealer([], dealer.isAI, False, False, False)       # dealer ai, player ai and balance remains the same as previous round
+    if not player.isAI:                         # if player is not ai, he has to choose bet amount
         player.bet = player.choseBetAmount()
         print(f"Bet amount: {player.bet}")
-    if player.isAI:
-        player.bet = 50
+    if player.isAI:                             # Otherwise set AI bet to 50
+        player.bet = 50                         
 
     player.hand.append(gameLogic.dealCard(deck.cardDeck))           # Player is dealt his first card
     player.hand.append(gameLogic.dealCard(deck.cardDeck))           # Player is dealt his 2nd card TODO Change dealCard() to accept amount to draw
@@ -69,18 +49,18 @@ while not endGame:
         dealer.takeTurn(player, deck.cardDeck)                     # Player chose to stand - It's now dealers turn to play - 
                                                     # Players sum is added as parameter so we can measure later.
 
-    if player.balance == 0:
-        print("You are out of money! Game is over!")
+    if player.balance == 0:                         # If player is out of money - end the game
+        print("You are out of money! Game is over!")   
         endGame = True
         quit()
 
-    while True:
+    while True:                                     # Ask if the player / dealer wants to play another round
         choice = input("Do you want to keep playing?(Y / N)")
-        if choice == 'N':
+        if choice == 'N':                           # If N then stop the game
             endGame = True
             break
-        elif choice == 'Y':
+        elif choice == 'Y':                         # If Y keep playing
             print("Playing one more round!")
             break
-        else:
+        else:                                       # Bad input: repeat while statement
             print("Your input didn't match Y / N - Please try again!")

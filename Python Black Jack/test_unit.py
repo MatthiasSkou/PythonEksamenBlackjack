@@ -6,16 +6,6 @@ from Deck import Deck
 from Card import Card
 from GameLogic import GameLogic
 
-   # Unit tests
-            # Betting
-            # Outcomes with card combinations
-            # 21
-        # checkSum()
-        # player AI or dealer AI choice?
-            # Wrong input loops
-            # TEST CASE FOR CREATEDECK / SHUFFLE DECK
-            # Fjern 'he'
-
 class GameTestCases(unittest.TestCase):
     # PLAYER: hand, isAI, playerChoice, balance, bet
     # DEALER: hand, isAI, deck, isReveal, dealerTurn

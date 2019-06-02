@@ -3,8 +3,6 @@ from Card import Card
 
 class Deck:
     def __init__(self, cardDeck):
-    # Deck of cards
-    # cardDeck = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']*4
         self.cardDeck = cardDeck                              # List of cards in the deck
 
     def createDeck(self):                       # Method that fills the deck with 52 cards as a standard deck of cards without jokers

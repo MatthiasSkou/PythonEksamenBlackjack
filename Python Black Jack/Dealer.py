@@ -8,23 +8,23 @@ class Dealer:
     gameLogic = GameLogic()
 
     def __init__(self, hand, isAI, isReveal, dealerTurn, roundOver): 
-        self.hand = hand
-        self.isAI = isAI
-        self.isReveal = isReveal
-        self.dealerTurn = dealerTurn
-        self.roundOver = roundOver
-                                # TODO
-                                # List that stores cards in the dealers hand
-                             # Bool that decides if dealer is Artificial Intelligence
-                             # Bool that decides if dealer's 2nd card is revealed
-                       # Bool that decides if it's dealer's turn to hit or stand                
+        self.hand = hand                        # List that stores cards in the dealers hand
+        self.isAI = isAI                        # Bool that decides if dealer is Artificial Intelligence
+        self.isReveal = isReveal                # Bool that decides if dealer's 2nd card is revealed
+        self.dealerTurn = dealerTurn            # Bool that decides if it's dealer's turn to hit or stand   
+        self.roundOver = roundOver              # Bool that decides if a round is over
 
-    def takeTurn(self, player, deck):              # Method for when dealer needs to take his  turn
+                                
+                             
+                             
+                                    
+
+    def takeTurn(self, player, deck):           # Method for when dealer needs to take his  turn
         self.isReveal = True                    # Dealers 2nd card is revealed
         self.printCardsAndSum()                 # Print hand and sum 
-        self.checkWin(player)                # Check if the game is done
+        self.checkWin(player)                   # Check if the game is done
         self.dealerTurn = True                  # Set dealerTurn to true so we enter while loop
-        while self.dealerTurn and not self.roundOver:                  # Loops while it's dealers turn to take an action
+        while self.dealerTurn and not self.roundOver:   # Loops while it's dealers turn to take an action
             sum = self.gameLogic.checkSum(self)       
             if sum <= 16:                       # If sum is 16 or lower, dealer needs to hit    
                 print('Dealers sum is equal to or lower than 16 - dealer hits!')
@@ -63,18 +63,18 @@ class Dealer:
             print(f"Dealer hand sum: {self.gameLogic.checkSum(self)}")
         print("==============================================")
         
-    def checkWin(self, player):              # Method that checks if the game has ended
+    def checkWin(self, player):                 # Method that checks if the game has ended
         playerSum = self.gameLogic.checkSum(player)
         sum = self.gameLogic.checkSum(self)               
         if sum > 21:                            # If dealers sum is larger than 21, dealer is bust
             print('Dealer exceeded 21 and has LOST the game!')
-            player.balance += player.bet * 2    # TODO Set correct multiplier for all bets
+            player.balance += player.bet    
             player.printBalance()
             self.dealerTurn = False             # Break out of while-loop
             self.roundOver = True
                                                 # TODO Player instant win if hit blackjack?
 
-        elif sum > playerSum and sum > 16:                   # TODO Draw over 16 even tho player is below 16?
+        elif sum > playerSum and sum > 16:      # TODO Draw over 16 even tho player is below 16? check rules
             print(f'Dealer hit {sum} and WINS over the player with {playerSum}')
             player.balance = player.balance - player.bet
             player.printBalance()
@@ -89,7 +89,7 @@ class Dealer:
         elif sum < playerSum and sum > 16:      # If dealers sum is above 16 but less than players - player won
             print(f'Dealer hit {sum} and is still lower than players sum: {playerSum}')
             print('Player has won')
-            player.balance += player.bet * 2    # TODO    
+            player.balance += player.bet     
             player.printBalance()
             self.dealerTurn = False             # Break out of while-loop
             self.roundOver = True
